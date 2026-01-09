@@ -21,7 +21,7 @@ import TextStyle from "@tiptap/extension-text-style";
 import { Color } from "@tiptap/extension-color";
 import Highlight from "@tiptap/extension-highlight";
 import TextAlign from "@tiptap/extension-text-align";
-import Link from "@tiptap/extension-link";
+// import Link from "@tiptap/extension-link";
 import { useEditorStore } from "@/store/use-editor-store";
 
 export const Editor = () => {
