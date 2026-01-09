@@ -1,0 +1,20 @@
+diff a/src/app/documents/[documentId]/editor.tsx b/src/app/documents/[documentId]/editor.tsx	(rejected hunks)
+@@ -21,6 +21,8 @@ import TextStyle from "@tiptap/extension-text-style";
+ import { Color } from "@tiptap/extension-color";
+ import Highlight from "@tiptap/extension-highlight";
+ 
++import TextAlign from "@tiptap/extension-text-align";
++
+ import Link from "@tiptap/extension-link";
+ 
+ import { useEditorStore } from "@/store/use-editor-store";
+@@ -73,6 +75,9 @@ export const Editor = () => {
+       FontFamily,
+       TextStyle,
+       Color,
++      TextAlign.configure({
++        types: ["heading", "paragraph"]
++      }),
+       Link.configure({
+         openOnClick: false,
+         autolink: true,
