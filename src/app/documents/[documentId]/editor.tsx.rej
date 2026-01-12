@@ -1,20 +1,15 @@
 diff a/src/app/documents/[documentId]/editor.tsx b/src/app/documents/[documentId]/editor.tsx	(rejected hunks)
-@@ -27,6 +27,7 @@ import Link from "@tiptap/extension-link";
- 
+@@ -28,11 +28,13 @@ import Link from "@tiptap/extension-link";
  import { useEditorStore } from "@/store/use-editor-store";
  import { FontSizeExtensions } from "@/extensions/font-size";
-+import { LineHeightExtension } from "@/extensions/line-height";
+ import { LineHeightExtension } from "@/extensions/line-height";
++import { Ruler } from "./ruler";
  
  export const Editor = () => {
    const { setEditor } = useEditorStore();
-@@ -76,6 +77,10 @@ export const Editor = () => {
-       FontFamily,
-       TextStyle,
-       Color,
-+      LineHeightExtension.configure({
-+        types: ["heading", "paragraph"],
-+        defaultLineHeight: "0.5",
-+      }),
-       FontSizeExtensions,
-       TextAlign.configure({
-         types: ["heading", "paragraph"],
+ 
+   const editor = useEditor({
++    immediatelyRender: false,
+     onCreate({ editor }) {
+       setEditor(editor);
+     },
