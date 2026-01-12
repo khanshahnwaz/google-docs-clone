@@ -49,9 +49,9 @@ export const Ruler = () => {
     setIsDraggingRight(false);
   };
 
-  const handleLeftDoubleClick = () => {
-    setLeftMargin(56);
-  };
+  // const handleLeftDoubleClick = () => {
+  //   setLeftMargin(56);
+  // };
 
   return (
     <div
