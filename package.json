@@ -13,6 +13,7 @@
     "@hookform/resolvers": "^3.9.1",
     "@juggle/resize-observer": "^3.4.0",
     "@liveblocks/client": "^2.12.2",
+    "@liveblocks/node": "^3.13.2",
     "@liveblocks/react": "^2.24.4",
     "@liveblocks/react-tiptap": "^2.12.2",
     "@liveblocks/react-ui": "^2.12.2",
