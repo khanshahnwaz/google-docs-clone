@@ -1,0 +1,12 @@
+diff a/src/app/documents/[documentId]/ruler.tsx b/src/app/documents/[documentId]/ruler.tsx	(rejected hunks)
+@@ -49,10 +57,6 @@ export const Ruler = () => {
+     setIsDraggingRight(false);
+   };
+ 
+-  const handleLeftDoubleClick = () => {
+-    setLeftMargin(56);
+-  };
+-
+   return (
+     <div
+       ref={rulerRef}
