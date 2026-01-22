@@ -19,13 +19,13 @@ import {
   RemoveFormattingIcon,
   StrikethroughIcon,
   TextIcon,
-  TrashIcon,
+  // TrashIcon,
   UnderlineIcon,
   Undo2Icon,
 } from "lucide-react";
 
 import { RenameDialog } from "@/components/rename-dialog";
-import { RemoveDialog } from "@/components/remove-dialog";
+// import { RemoveDialog } from "@/components/remove-dialog";
 import {
   Menubar,
   MenubarContent,
@@ -166,7 +166,7 @@ export const Navbar = ({ data }: NavbarProps) => {
                       Rename
                     </MenubarItem>
                   </RenameDialog>
-                  <RemoveDialog documentId={data._id}>
+                  {/* <RemoveDialog documentId={data._id}>
                     <MenubarItem
                       onClick={(e) => e.stopPropagation()}
                       onSelect={(e) => e.preventDefault()}
@@ -174,7 +174,7 @@ export const Navbar = ({ data }: NavbarProps) => {
                       <TrashIcon className="mr-2 size-4" />
                       Remove
                     </MenubarItem>
-                  </RemoveDialog>
+                  </RemoveDialog> */}
                   <MenubarSeparator />
                   <MenubarItem onClick={() => window.print()}>
                     <PrinterIcon className="mr-2 size-4" />
