@@ -29,11 +29,20 @@ import { Ruler } from "./ruler";
 import { useStorage } from "@liveblocks/react";
 import { useLiveblocksExtension } from "@liveblocks/react-tiptap";
 import { Threads } from "./threads";
-export const Editor = () => {
-  const liveblocks = useLiveblocksExtension()
-  const leftMargin = useStorage((root) => root.leftMargin);
- const rightMargin = useStorage((root) => root.rightMargin);
 
+import { LEFT_MARGIN_DEFAULT, RIGHT_MARGIN_DEFAULT } from "@/constants/margins";
+interface EditorProps {
+  initialContent?: string | undefined;
+}
+ 
+export const Editor = ({ initialContent }: EditorProps) => {
+  const leftMargin = useStorage((root) => root.leftMargin) ?? LEFT_MARGIN_DEFAULT;
+  const rightMargin = useStorage((root) => root.rightMargin) ?? RIGHT_MARGIN_DEFAULT;
+
+  const liveblocks = useLiveblocksExtension({
+    initialContent,
+    offlineSupport_experimental: true,
+  });
 
   const { setEditor } = useEditorStore();
 
@@ -65,7 +74,7 @@ export const Editor = () => {
     },
     editorProps: {
       attributes: {
-        style: `padding-left: ${leftMargin ?? 56}px; padding-right: ${rightMargin ?? 56}px;`,
+        style: `padding-left: ${leftMargin}px; padding-right: ${rightMargin}px;`,
         class:
           "focus:outline-none print:boder-0 border bg-white border-editor-border flex flex-col min-h-[1054px] w-[816px] pt-10 pr-14 pb-10 cursor-text",
       },
@@ -99,22 +108,6 @@ export const Editor = () => {
       }),
       TaskItem.configure({ nested: true }),
     ],
-    content: `
-        <table>
-          <tbody>
-            <tr>
-              <th>Name</th>
-              <th colspan="3">Description</th>
-            </tr>
-            <tr>
-              <td>Cyndi Lauper</td>
-              <td>Singer</td>
-              <td>Songwriter</td>
-              <td>Actress</td>
-            </tr>
-          </tbody>
-        </table>
-      `,
   });
 
   return (
