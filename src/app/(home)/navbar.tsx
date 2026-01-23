@@ -19,6 +19,7 @@ import { UserButton, OrganizationSwitcher } from "@clerk/nextjs";
       {/* <UserButton/> */}
       <div className="flex gap-3 items-center pl-6">
         <OrganizationSwitcher
+          
           afterCreateOrganizationUrl="/"
           afterLeaveOrganizationUrl="/"
           afterSelectOrganizationUrl="/"
