@@ -12,6 +12,8 @@ import { LEFT_MARGIN_DEFAULT, RIGHT_MARGIN_DEFAULT } from "@/constants/margins";
 type User = { id: string; name: string; avatar: string; color: string; };
 
 export function Room({ children }: { children: ReactNode }) {
+
+
   const params = useParams();
 
   const [users, setUsers] = useState<User[]>([]);
@@ -20,6 +22,7 @@ export function Room({ children }: { children: ReactNode }) {
     () => async () => {
       try {
         const list = await getUsers();
+        // console.log("users ",list)
         setUsers(list);
       } catch {
         toast.error("Failed to fetch users");
@@ -71,6 +74,7 @@ export function Room({ children }: { children: ReactNode }) {
       <RoomProvider
         id={params.documentId as string}
         initialStorage={{ leftMargin: LEFT_MARGIN_DEFAULT, rightMargin: RIGHT_MARGIN_DEFAULT }}
+       
       >
         <ClientSideSuspense fallback={<FullscreenLoader label="Room loading..." />}>
           {children}

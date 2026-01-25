@@ -19,9 +19,57 @@ const inter = Inter({
 
 
 export const metadata: Metadata = {
-  title: "Google Docs Clone",
-  description: "Real time multi user document editing application.",
+  title: {
+    default: "Google Docs Clone",
+    template: "%s | Google Docs Clone",
+  },
+  description:
+    "A real-time multi-user document editing application built with Next.js, Liveblocks, Convex, Clerk, and Tiptap.",
+  keywords: [
+    "google docs clone",
+    "real-time collaboration",
+    "next.js",
+    "liveblocks",
+    "convex",
+    "tiptap",
+    "collaborative editor",
+  ],
+  authors: [{ name: "Shahnwaz Khan" }],
+  creator: "Shahnwaz Khan",
+  metadataBase: new URL("https://google-docs-clone-umber-eight.vercel.app"),
+
+  openGraph: {
+    title: "Google Docs Clone",
+    description:
+      "Collaborate on documents in real time with live cursors, presence, and rich-text editing.",
+    url: "https://google-docs-clone-umber-eight.vercel.app",
+    siteName: "Google Docs Clone",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Google Docs Clone Preview",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Google Docs Clone",
+    description:
+      "A real-time collaborative document editor built with Next.js and Liveblocks.",
+    images: ["/og-image.png"],
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
+
 
 export default function RootLayout({
   children,
